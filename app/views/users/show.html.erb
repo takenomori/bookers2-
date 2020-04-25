@@ -1,0 +1,30 @@
+ <%= render 'users/userinfo', user: @user %>
+<%= render 'books/newbook', book: @book %>
+<div class="container">
+  <div class="col-xs-9">
+    <h2>
+      <span>My Books</span>
+    </h2>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th colspan="1"></th>
+          <th>Title</th>
+          <th>Opiniton</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <% @books.each do |book| %>
+        <tbody>
+          <tr>
+            <td><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %></td>
+            <td><%= link_to book.title, book_path(book.id) %></td>
+            <td><%= book.body %></td>
+            <td><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %></td>
+            <td><%= book.favorites.count %>いいね</td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+ <html>
+
+   <head>
+     <title>Bookers</title>
+
+   <body>
+     <div class='container'>
+       <div class="row">
+         <div class='top-message col-md-offset-3 col-md-6'>
+           <h1>welcome to <span class='glyphicon glyphicon-book'></span><strong>Bookers</strong> !!</h1>
+           <p>In<span class='glyphicon glyphicon-book'></span><strong>Bookers</strong>,</p>
+           <p>you can share and exchange your bodys , inpressions , and emotions</p>
+           <p>about varioius books!</p>
+           <div class="btn-wrapper">
+             <p><%= link_to "log In", new_user_session_path, class:"text-muted btn btn-info btn-block col-xs-8 " %></p>
+           </div>
+           <p>
+             <%= link_to "Sign up", new_user_registration_path, class:"text-muted btn btn-success btn-block col-xs-8 "%>
+           </p>
+         </div>
+       </div>
+     </div>
+   </body>
+
+ </html>
